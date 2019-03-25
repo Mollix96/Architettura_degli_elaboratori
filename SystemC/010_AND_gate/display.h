@@ -15,7 +15,7 @@ SC_MODULE(Display)
     // Dichiara il constructor.
     SC_CTOR(Display)
     {
-        // Dichiara la funzione Display_Proc()
+        // Dichiara la funzione displayProc()
         // come un SC_METHOD.
         SC_METHOD(displayProc);
 

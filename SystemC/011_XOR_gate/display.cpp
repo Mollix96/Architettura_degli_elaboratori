@@ -3,8 +3,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-// Metodo Display_Proc() per stampare il risultato.
-void Display::display_proc()
+// Stampa a schermo il risultato.
+void Display::displayProc()
 {
     cout << "Result = " << (bool)result.read() << " @ " << sc_time_stamp() << endl;
 }

@@ -9,14 +9,14 @@ SC_MODULE(Display)
     sc_in<sc_uint<1>> result;
 
     // Prototipi.
-    void display_proc();
+    void displayProc();
 
     // Init del modulo (costruttore della classe).
     SC_CTOR(Display)
     {
-        // Dichiara la funzione Display_Proc()
+        // Dichiara la funzione displayProc()
         // come un SC_METHOD.
-        SC_METHOD(display_proc);
+        SC_METHOD(displayProc);
 
         // Sensitivity list.
         sensitive << result;
