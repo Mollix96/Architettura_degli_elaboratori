@@ -6,5 +6,5 @@
 // Stampa a schermo il risultato.
 void Display::displayProc()
 {
-    cout << "Result = " << (bool)result.read() << " @ " << sc_time_stamp() << endl;
+    cout << "[Display] Result = " << (bool)result.read() << " @ " << sc_time_stamp() << endl;
 }
