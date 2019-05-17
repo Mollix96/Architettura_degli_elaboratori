@@ -21,11 +21,11 @@ main:
     syscall                         # Lettura del valore.
     move  $s1, $v0                  # Salva il valore letto.
 
-                                    # Chiama la funzione 'setGreaterThan'.
+                                    # Chiama la funzione 'setOnGreaterThan'.
     addi  $sp, $sp, -8              # Decrementa lo stack pointer di 8 byte (spazio per 2 valori).
     sw    $s0, 0($sp)               # Carica il primo valore sullo stack.
     sw    $s1, 4($sp)               # Carica il secondo valore sullo stack.
-    jal   setGreaterThan            # Chiama 'setGreaterThan'.
+    jal   setOnGreaterThan          # $v0 = (a < b).
 
     move  $t0, $v0                  # Salva il valore di ritorno.
 
@@ -51,7 +51,7 @@ exit:
 
 #region Functions
 #
-# Calcola se il primo valore e' maggiore del secondo.
+# Controlla se il primo valore e' maggiore del secondo.
 #
 # Arguments
 # 0($sp) = Primo valore intero.
@@ -61,7 +61,7 @@ exit:
 # $v0 = 0x0  Se il primo valore e' minore del secondo.
 # $v0 = 0x1  Se il primo valore e' maggiore del secondo.
 #
-setGreaterThan:
+setOnGreaterThan:
                                     # Pop dei valori dallo stack.
     lw    $t0, 0($sp)               # Pop del primo valore.
     lw    $t1, 4($sp)               # Pop del secondo valore.
